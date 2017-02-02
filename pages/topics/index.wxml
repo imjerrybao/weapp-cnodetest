@@ -1,0 +1,40 @@
+<view>
+<view class="top-bar">
+    <view wx:if="{{tab=='all'}}" id="all" class="bar-item selected" catchtap="itemTapAction">全部</view>
+    <view wx:else class="bar-item" id="all" catchtap="itemTapAction">全部</view>
+    <view wx:if="{{tab=='good'}}" id="good" class="bar-item selected" catchtap="itemTapAction">精华</view>
+    <view wx:else class="bar-item" id="good" catchtap="itemTapAction">精华</view>
+    <view wx:if="{{tab=='share'}}" id="share" class="bar-item selected" catchtap="itemTapAction">分享</view>
+    <view wx:else class="bar-item" id="share" catchtap="itemTapAction">分享</view>
+    <view wx:if="{{tab=='ask'}}" id="ask" class="bar-item selected" catchtap="itemTapAction">问答</view>
+    <view wx:else class="bar-item" id="ask" catchtap="itemTapAction">问答</view>
+    <view wx:if="{{tab=='job'}}" id="job" class="bar-item selected" catchtap="itemTapAction">招聘</view>
+    <view wx:else class="bar-item" id="job" catchtap="itemTapAction">招聘</view>
+</view>
+<scroll-view class="topic-list" scroll-y="true" bindscrolltolower="lower">
+    <block wx:for="{{topics}}">
+        <view class="topic-item" id="{{item.id}}" catchtap="redictDetail">
+            <view class="left">
+                <view wx:if="{{item.top==true}}" class="tag hot">置顶</view>
+                <view wx:elif="{{item.good==true}}" class="tag hot">精华</view>
+                <view wx:elif="{{item.tab == 'share'}}" class="tag common">分享</view>
+                <view wx:elif="{{item.tab == 'ask'}}" class="tag common">问答</view>
+                <view wx:elif="{{item.tab == 'job'}}" class="tag common">招聘</view>
+                <image class="avatar" src="{{item.author.avatar_url}}"></image>
+            </view>
+            <view class="right">
+                <view class="topic-title">{{item.title}}</view>
+                <view class="topic-author">
+                    <view class="topic-author-name">{{item.author.loginname}}</view>
+                    <view class="topic-reply">{{item.reply_count}} / {{item.visit_count}}</view>
+                </view>
+                <view class="topic-publishtime">
+                    <view>创建于：{{item.create_at}}</view>
+                    <view></view>
+                </view>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+<loading hidden="{{hidden}}">加载中...</loading>
+</view>

@@ -1,0 +1,24 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.tag{
+    display:inline-block;
+    padding:6rpx 10rpx;
+    border-radius:4rpx;
+    border: 1rpx solid #80bd01;
+    font-size:24rpx;
+}
+.tag.hot{
+    background-color: red;
+    color:white;
+}
+.tag.common{
+    background-color: #ddd;
+}

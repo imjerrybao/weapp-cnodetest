@@ -1,0 +1,45 @@
+.title{
+    font-size:40rpx;
+    font-weight: bold;
+    text-align: center;
+    margin-top:20rpx;
+}
+.pubinfo{
+    display: flex;
+    flex-direction: row;
+    margin-top:20rpx;
+    padding-bottom:20rpx;
+    border-bottom: 1px solid #80bd01;
+}
+.pubinfo .left{
+    padding:0 20rpx;
+}
+.pubinfo .avatar{
+    width:64rpx;
+    height:64rpx;
+    border-radius: 50%;
+}
+.pubinfo .right{
+    font-size:30rpx;
+}
+.pubinfo .author{
+    display:flex;
+    flex-direction: row;
+}
+.pubinfo .tag{
+    line-height: 30rpx;
+    vertical-align: middle;
+}
+.pubinfo .author-name{
+    line-height:30rpx;
+    height:rpx;
+    vertical-align: middle;
+    margin-left:10rpx;
+}
+.pubinfo .publishtime{
+    margin-top:10rpx;
+}
+.content{
+    font-size:32rpx;
+    margin:20rpx;
+}

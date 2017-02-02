@@ -1,0 +1,27 @@
+<view>
+    <view class="title">{{detail.title}}</view>
+    <view class="pubinfo">
+        <view class="left">
+            <image class="avatar" src="{{detail.author.avatar_url}}"></image>
+        </view>
+        <view class="right">
+            <view class="author">
+                <view wx:if="{{detail.top==true}}" class="tag hot">置顶</view>
+                <view wx:elif="{{detail.good==true}}" class="tag hot">精华</view>
+                <view wx:elif="{{detail.tab == 'share'}}" class="tag common">分享</view>
+                <view wx:elif="{{detail.tab == 'ask'}}" class="tag common">问答</view>
+                <view wx:elif="{{detail.tab == 'job'}}" class="tag common">招聘</view>
+                <view class="author-name">{{detail.author.loginname}}</view>
+            </view>
+            <view class="publishtime">
+                {{detail.create_at}} - {{detail.visit_count}}次浏览
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        {{detail.content}}
+    </view>
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>
